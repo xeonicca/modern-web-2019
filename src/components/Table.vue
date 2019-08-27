@@ -29,8 +29,8 @@
       <template v-if="props.row.items.length" slot="detail" slot-scope="props">
         <tr v-for="(item, index) in props.row.items" :key="item.id">
           <td v-if="showDetailIcon"></td>
-          <td></td>
-          <b-table-column field="date" :visible="columnsVisible['date'].display" :label="columnsVisible['date'].title" sortable centered></b-table-column>
+          <td v-show="columnsVisible['date'].display"></td>
+          <td v-show="columnsVisible['time'].display"></td>
           <td v-show="columnsVisible['track'].display" class="has-text-centered">
             <span :class="
                 [
