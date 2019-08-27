@@ -63,7 +63,7 @@ export default {
         time: { title: 'Time', display: true },
         speaker: { title: 'Speaker', display: true },
       },
-      showDetailIcon: true
+      showDetailIcon: false
     }
   },
   props: {
