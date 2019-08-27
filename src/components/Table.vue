@@ -11,7 +11,7 @@
       :row-class="(row, index) => rowClass(row)"
       >
       <template slot-scope="props">
-        <b-table-column field="date" :visible="columnsVisible['date'].display" :label="columnsVisible['date'].title">
+        <b-table-column field="date" :visible="columnsVisible['date'].display" :label="columnsVisible['date'].title" centered>
           <strong v-html="props.row.date"></strong>
         </b-table-column>
         <b-table-column field="date" :visible="columnsVisible['time'].display" :label="columnsVisible['time'].title" centered>
