@@ -11,15 +11,15 @@
       :row-class="(row, index) => rowClass(row)"
       >
       <template slot-scope="props">
-        <b-table-column field="date" :visible="columnsVisible['date'].display" :label="columnsVisible['date'].title" sortable>
+        <b-table-column field="date" :visible="columnsVisible['date'].display" :label="columnsVisible['date'].title">
           <strong v-html="props.row.date"></strong>
         </b-table-column>
-        <b-table-column field="date" :visible="columnsVisible['time'].display" :label="columnsVisible['time'].title" sortable centered>
+        <b-table-column field="date" :visible="columnsVisible['time'].display" :label="columnsVisible['time'].title" centered>
           {{ props.row.startDateText }} - {{ props.row.endDateText }}
         </b-table-column>
         <b-table-column :visible="columnsVisible['track'].display" :label="columnsVisible['track'].title" centered>
         </b-table-column>
-        <b-table-column field="title" :visible="columnsVisible['title'].display" :label="columnsVisible['title'].title" width="500" sortable>
+        <b-table-column field="title" :visible="columnsVisible['title'].display" :label="columnsVisible['title'].title" width="500">
           <strong v-html="props.row.title"></strong>
         </b-table-column>
         <b-table-column :visible="columnsVisible['speaker'].display" :label="columnsVisible['speaker'].title">
