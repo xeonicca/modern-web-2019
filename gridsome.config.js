@@ -6,5 +6,7 @@
 
 module.exports = {
   siteName: 'Modern Web 2019 Agenda',
-  plugins: []
+  plugins: [],
+  siteUrl: 'https://xeonicca.github.io',
+  pathPrefix: '/modern-web-2019',
 }
