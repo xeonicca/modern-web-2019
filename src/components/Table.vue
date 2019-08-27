@@ -19,7 +19,7 @@
         </b-table-column>
         <b-table-column :visible="columnsVisible['track'].display" :label="columnsVisible['track'].title" centered>
         </b-table-column>
-        <b-table-column field="title" :visible="columnsVisible['title'].display" :label="columnsVisible['title'].title" width="300" sortable>
+        <b-table-column field="title" :visible="columnsVisible['title'].display" :label="columnsVisible['title'].title" width="500" sortable>
           <strong v-html="props.row.title"></strong>
         </b-table-column>
         <b-table-column :visible="columnsVisible['speaker'].display" :label="columnsVisible['speaker'].title">
