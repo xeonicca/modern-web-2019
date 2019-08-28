@@ -64,7 +64,11 @@ export default {
   },
 
   mounted() {
-    // window.scrollTo()
+    let activeRow = document.querySelector('tr.is-active')
+    window.scrollTo({ 
+      top: activeRow.getBoundingClientRect().top - 50, 
+      behavior: "smooth" 
+    });
   }
 }
 </script>
@@ -91,8 +95,6 @@ query Talks {
         endDate
         endDateText
         sessionType
-        summary
-        language
         sort
         path
         speaker {
