@@ -46,7 +46,9 @@
               {{item.track}}
             </span>
           </td>
-          <td v-show="columnsVisible['title'].display">{{ item.title }}</td>
+          <td v-show="columnsVisible['title'].display">
+            <g-link :to="`talk/${item.id}`"><span v-html="item.title"></span></g-link>
+          </td>
           <td v-show="columnsVisible['speaker'].display">{{ item.speaker | speakerName }}</td>
         </tr>
       </template>
