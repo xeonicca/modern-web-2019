@@ -1,7 +1,17 @@
 <template>
   <Layout>
-    <h1>About us</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error doloremque omnis animi, eligendi magni a voluptatum, vitae, consequuntur rerum illum odit fugit assumenda rem dolores inventore iste reprehenderit maxime! Iusto.</p>
+    <section class="hero is-medium is-primary is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            <strong>RUTEN IS HIRING!!</strong>
+          </h1>
+          <h2 class="subtitle">
+            come to our booth!
+          </h2>
+        </div>
+      </div>
+    </section>
   </Layout>
 </template>
 
@@ -12,3 +22,9 @@ export default {
   }
 }
 </script>
+
+<style>
+  .is-ruten {
+    background-color: #ff9900;
+  }
+</style>

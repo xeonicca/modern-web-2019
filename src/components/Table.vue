@@ -96,7 +96,7 @@ export default {
 
   filters: {
     speakerName(speaker) {
-      return speaker && speaker.length  && speaker[0].name || ''
+      return speaker  && speaker.name || ''
     }
   }
 }

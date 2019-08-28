@@ -61,6 +61,10 @@ export default {
   },
   components: {
     Table
+  },
+
+  mounted() {
+    // window.scrollTo()
   }
 }
 </script>

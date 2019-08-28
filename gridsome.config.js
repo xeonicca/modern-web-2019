@@ -5,7 +5,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'Modern Web 2019 Agenda',
+  siteName: 'ModernWeb',
   plugins: [],
   siteUrl: 'https://xeonicca.github.io',
   pathPrefix: '/modern-web-2019',

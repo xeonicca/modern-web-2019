@@ -17,7 +17,6 @@ module.exports = function (api) {
     })
 
     speaksData.forEach((item, i) => {
-      console.log(item.avatar)
       speakers.addNode({
         id: item.target_id,
         company: item.company,
@@ -39,6 +38,7 @@ module.exports = function (api) {
       let endDate = new Date(+item.session_end*1000)
 
       talks.addNode({
+        speaker: item.speaker.length? store.createReference('Speakers', item.speaker[0].target_id):null,
         id: item.session_id,
         title: item.title,
         classroom: item.classroom,
@@ -52,7 +52,7 @@ module.exports = function (api) {
         endDateText: `${endDate.toLocaleTimeString()}`,
         sessionType: item.session_type,
         language: item.language,
-        speaker: item.speaker,
+        // speaker: item.speaker,
         path: `talk/${item.session_id}` //... or this for a route per item
       })
     })

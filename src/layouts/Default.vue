@@ -1,9 +1,18 @@
 <template>
   <section class="section">
+    <b-navbar>
+      <template slot="brand">
+        <b-navbar-item href="/">
+          <h1 class="title">
+            {{$static.metaData.siteName}}
+          </h1>
+        </b-navbar-item>
+      </template>
+      <template slot="start">
+        <g-link class="navbar-item" to="/about">About us</g-link>
+      </template>
+    </b-navbar>
     <div class="container">
-      <h1 class="title">
-        {{$static.metaData.siteName}}
-      </h1>
       <slot/>
     </div>
   </section>
