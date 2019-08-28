@@ -20,8 +20,8 @@
         <b-table-column :visible="columnsVisible['track'].display" :label="columnsVisible['track'].title" centered>
         </b-table-column>
         <b-table-column field="title" :visible="columnsVisible['title'].display" :label="columnsVisible['title'].title" width="500">
-          <g-link :to="`talk/${props.row.id}`"><strong v-html="props.row.title"></strong></g-link>
-          
+          <g-link v-if="props.row.id" :to="`talk/${props.row.id}`"><strong v-html="props.row.title"></strong></g-link>
+          <span v-else>{{ props.row.title }}</span>
         </b-table-column>
         <b-table-column :visible="columnsVisible['speaker'].display" :label="columnsVisible['speaker'].title">
           {{ props.row.speaker | speakerName }}
