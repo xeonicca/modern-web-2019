@@ -85,9 +85,9 @@ export default {
       this.$refs.table.toggleDetails(row)
     },
 
-    rowClass({sessionType, sort}) {
+    rowClass({sessionType, startDate, endDate}) {
       let rowClass = `is-${sessionType}`
-      if(sort < Date.now()) {
+      if(startDate < Date.now() && endDate > Date.now()) {
         rowClass += ' is-active'
       }
       return rowClass
