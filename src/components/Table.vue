@@ -15,7 +15,7 @@
           <strong v-html="props.row.date"></strong>
         </b-table-column>
         <b-table-column field="date" :visible="columnsVisible['time'].display" :label="columnsVisible['time'].title" centered>
-          {{ props.row.startDateText }} - {{ props.row.endDateText }}
+          <span class="time-hint" :data-start-date="props.row.startDate" :data-end-date="props.row.endDate">{{ props.row.startDateText }} - {{ props.row.endDateText }}</span>
         </b-table-column>
         <b-table-column :visible="columnsVisible['track'].display" :label="columnsVisible['track'].title" centered>
         </b-table-column>
