@@ -1,7 +1,9 @@
 <template>
   <div class="card">
     <header class="card-header">
-      <p class="card-header-title" v-html="talk.title"></p>
+      <p class="card-header-title">
+        <span v-html="talk.title"></span>
+      </p>
     </header>
     <div class="card-content">
       <div v-if="hasSpeaker" class="media">
@@ -17,7 +19,18 @@
       </div>
       <div class="content">
         <p v-html="talk.summary"></p>
-        <br>
+        <p><span :class="
+                [
+                    'tag',
+                    {'is-danger': talk.track === 'A'},
+                    {'is-success': talk.track === 'B'},
+                    {'is-primary': talk.track === 'C'},
+                    {'is-warning': talk.track === 'D'},
+                    {'is-info': talk.track === 'E'},
+
+                ]">
+              {{talk.track}}</span>
+        &nbsp;<strong>{{talk.classroom}}</strong></p>
         <time :datetime="talk.date">{{talk.date}} {{ talk.startDateText }} - {{ talk.endDateText }}</time>
       </div>
     </div>

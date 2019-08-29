@@ -32,7 +32,7 @@
           <td v-if="showDetailIcon"></td>
           <td v-show="columnsVisible['date'].display"></td>
           <td v-show="columnsVisible['time'].display"></td>
-          <td v-show="columnsVisible['track'].display" class="has-text-centered">
+          <td v-show="columnsVisible['track'].display">
             <span :class="
                 [
                     'tag',
@@ -45,6 +45,7 @@
                 ]">
               {{item.track}}
             </span>
+            &nbsp;<strong>{{item.classroom}}</strong>
           </td>
           <td v-show="columnsVisible['title'].display">
             <g-link :to="`talk/${item.id}`"><span v-html="item.title"></span></g-link>

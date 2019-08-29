@@ -65,9 +65,9 @@ export default {
 
   mounted() {
     let activeRow = document.querySelector('tr.is-active')
-    window.scrollTo({ 
-      top: activeRow.getBoundingClientRect().top - 50, 
-      behavior: "smooth" 
+    window.scrollTo({
+      top: activeRow.getBoundingClientRect().top - 50,
+      behavior: "smooth"
     });
   }
 }
@@ -82,7 +82,7 @@ export default {
 
 <page-query>
 query Talks {
-  talks: allTalks(sort: [{ by: "sort", order: ASC }, { by: "track", order: ASC}]) {
+  talks: allTalks(filter: { date: { eq: "2019-8-29" }}, sort: [{ by: "sort", order: ASC }, { by: "track", order: ASC}]) {
     edges {
       node {
         id

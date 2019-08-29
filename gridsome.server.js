@@ -36,13 +36,28 @@ module.exports = function (api) {
     talksData.forEach((item, i) => {
       let startDate = new Date(+item.session_start*1000)
       let endDate = new Date(+item.session_end*1000)
+      let track = item.track.replace(/Track\s/, '')
+      let classroom = ''
+
+      switch(track) {
+        case 'A':
+          classroom = '101AB'; break;
+        case 'B':
+          classroom = '101CD'; break;
+        case 'C':
+          classroom = '102'; break;
+        case 'D':
+          classroom = '103'; break;
+        case 'E':
+          classroom = '105'; break;
+      }
 
       talks.addNode({
         speaker: item.speaker.length? store.createReference('Speakers', item.speaker[0].target_id):null,
         id: item.session_id,
         title: item.title,
-        classroom: item.classroom,
-        track: item.track.replace(/Track\s/, ''),
+        classroom: classroom,
+        track: track,
         summary: item.summary,
         date: startDate.toLocaleDateString(),
         sort: +item.session_start*1000,
