@@ -68,7 +68,28 @@ export default {
     window.scrollTo({
       top: activeRow.getBoundingClientRect().top - 50,
       behavior: "smooth"
-    });
+    }); 
+
+    document.addEventListener('visibilitychange', e => {
+      if(document.visibilityState === 'visible') {
+        let timeNode = Array.prototype.filter.call(document.querySelectorAll('.time-hint'), v => {
+          let startDate = v.dataset.startDate, endDate = v.dataset.endDate
+          return +startDate < Date.now() && +endDate > Date.now()
+        })
+
+        if(timeNode.length) {
+          timeNode = timeNode[0]
+          let oldRow = document.querySelector('tr.is-active')
+          oldRow && oldRow.classList.remove('is-active')
+          let activeRow = timeNode.parentNode.parentNode
+          activeRow.classList.add('is-active')
+          window.scrollTo({
+            top: activeRow.getBoundingClientRect().top - 50,
+            behavior: "smooth"
+          });
+        }
+      }
+    })
   }
 }
 </script>

@@ -15,8 +15,8 @@
       <div class="content">
         <p v-html="talk.summary"></p>
         <hr>
-        <p class="content">About the speaker</p>
-        <p class="content is-small" v-html="talk.speaker.profile"></p>
+        <p v-if="hasSpeaker" class="content">About the speaker</p>
+        <p v-if="hasSpeaker" class="content is-small" v-html="talk.speaker.profile"></p>
         <p v-if="talk.track"><span :class="
                 [
                     'tag',
